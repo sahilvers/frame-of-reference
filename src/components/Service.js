@@ -119,7 +119,7 @@ const Service = ({ step, setStep }) => {
   };
 
   return (
-    <div className={`bg-black text-white w-[400px] pt-8 max-w-11/12 font-mono`}>
+    <div className={`max-w-[400px] w-11/12 text-black pt-8 font-mono`}>
       <div
         className={`fixed top-0 left-0  w-screen bg-black
         transition-opacity duration-3000 
@@ -142,8 +142,8 @@ const Service = ({ step, setStep }) => {
           <textarea
             type="text"
             placeholder="Type your answer here..."
-            className={`text-gray-400 my-1 placeholder-gray-400 w-full 
-          resize-none bg-black border-0 focus:outline-none caret-gray-200 
+            className={`text-gray-800 my-1 placeholder-gray-400 w-full 
+          resize-none bg-gray-100 border-0 focus:outline-none caret-cyan-500 
           transition-opacity duration-1000 ${
             inputFadeIn ? "opacity-100" : "opacity-0"
           }`}
@@ -157,7 +157,7 @@ const Service = ({ step, setStep }) => {
             currentQuestion + 1 !== questions.length && (
               <div
                 onClick={() => proceedToNextStep()}
-                className="px-4 py-2 border-2 h-fit border-white hover:cursor-pointer hover:bg-gray-800"
+                className="px-4 py-2 border-2 h-fit border-gray-700 hover:cursor-pointer hover:bg-gray-800"
               >
                 Next
               </div>
@@ -167,7 +167,7 @@ const Service = ({ step, setStep }) => {
       {finalMessageTyped && (
         <div
           onClick={() => handleManifestationClicked()}
-          className="border-2 p-4 hover:cursor-pointer hover:bg-gray-800 border-white text-center mt-8 mb-16"
+          className="border-2 p-4 hover:cursor-pointer hover:bg-gray-200 border-black text-center mt-8 mb-16"
         >
           Send Manifestaion
         </div>

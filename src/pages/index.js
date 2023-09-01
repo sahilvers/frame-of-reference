@@ -21,11 +21,13 @@ export default function Home() {
         <title>Frame of Reference</title>
       </Head>
       <main
-        className={`flex min-h-screen flex-col items-center justify-between  `}
+        className={`flex min-h-screen flex-col items-center justify-between ${
+          [1, 2, 3, 4, 5, 6].includes(step) && "bg-gray-100"
+        }  `}
       >
         {step === 0 && <TerminalSimulator step={step} setStep={setStep} />}
         <div
-          className={`fixed h-screen overflow-scroll w-full p-12 flex  items-center flex-col pb-24`}
+          className={`fixed h-screen overflow-scroll w-full p-4 flex  items-center flex-col pt-12 pb-24`}
         >
           {[1, 2, 3, 4, 5, 6].includes(step) && (
             <SelectOption step={step} setStep={setStep} />

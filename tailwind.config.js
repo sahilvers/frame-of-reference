@@ -27,4 +27,17 @@ module.exports = {
     },
   },
   plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".custom-class": {
+          backgroundColor: "var(--tw-bg-opacity) #E5E7EB", // bg-gray-300
+          fontSize: "0.875rem", // text-sm
+          borderRadius: "0.375rem", // rounded-lg
+        },
+      };
+
+      addUtilities(newUtilities, ["responsive", "hover"]);
+    },
+  ],
 };

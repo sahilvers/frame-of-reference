@@ -83,6 +83,9 @@ const SelectOption = ({ step, setStep }) => {
     return () => clearTimeout(timerId); // Clear timeout on unmount
   }, [typedText, isDeleting, isWaiting, introductionText, ideas, currentIndex]);
 
+  const selectedButton = "border-gray-800 text-gray-800 ";
+  const unselectedButton = "border-gray-300 text-gray-500";
+
   const renderText = typedText.split("\n").map((item, key) => {
     // if its an idea, make it green
     if (key > 1) {
@@ -106,62 +109,52 @@ const SelectOption = ({ step, setStep }) => {
   });
 
   return (
-    <div className="h-fit">
-      <div className=" text-white w-[400px] pt-8 max-w-11/12 font-mono h-48">
+    <div className="h-fit max-w-[400px] w-11/12">
+      <div className="w-full text-black pt-8 font-mono h-48 ">
         <p>{renderText}</p>
       </div>
 
       <div
-        className={`flex flex-wrap max-w-11/12 w-[400px]  justify-center space-x-4 font-mono transition-opacity duration-3000 ${
+        className={`flex flex-wrap justify-center space-x-4 font-mono transition-opacity duration-3000 ${
           buttonVisible ? "opacity-100" : "opacity-0"
         }`}
       >
         <div
           onClick={() => setStep(2)}
-          className={`hover:cursor-pointer hover:bg-gray-800 px-4 py-2 my-2 border-2 ${
-            [1, 2].includes(step)
-              ? "border-white text-white"
-              : "border-gray-700 text-gray-700"
+          className={`hover:cursor-pointer hover:bg-gray-200 px-4 py-2 my-2 border-2 ${
+            [1, 2].includes(step) ? selectedButton : unselectedButton
           } `}
         >
           Product
         </div>
         <div
           onClick={() => setStep(3)}
-          className={`hover:cursor-pointer hover:bg-gray-800 px-4 py-2 my-2 border-2 ${
-            [1, 3].includes(step)
-              ? "border-white text-white"
-              : "border-gray-700 text-gray-700"
+          className={`hover:cursor-pointer hover:bg-gray-200 px-4 py-2 my-2 border-2 ${
+            [1, 3].includes(step) ? selectedButton : unselectedButton
           } `}
         >
           Service
         </div>
         <div
           onClick={() => setStep(4)}
-          className={`hover:cursor-pointer hover:bg-gray-800 px-4 py-2 my-2 border-2 ${
-            [1, 4].includes(step)
-              ? "border-white text-white"
-              : "border-gray-700 text-gray-700"
+          className={`hover:cursor-pointer hover:bg-gray-200 px-4 py-2 my-2 border-2 ${
+            [1, 4].includes(step) ? selectedButton : unselectedButton
           } `}
         >
           API
         </div>
         <div
           onClick={() => setStep(5)}
-          className={`hover:cursor-pointer hover:bg-gray-800 px-4 py-2 my-2 border-2 ${
-            [1, 5].includes(step)
-              ? "border-white text-white"
-              : "border-gray-700 text-gray-700"
+          className={`hover:cursor-pointer hover:bg-gray-200 px-4 py-2 my-2 border-2 ${
+            [1, 5].includes(step) ? selectedButton : unselectedButton
           } `}
         >
           Invention
         </div>
         <div
           onClick={() => setStep(6)}
-          className={`hover:cursor-pointer hover:bg-gray-800 px-4 py-2 my-2 border-2 ${
-            [1, 6].includes(step)
-              ? "border-white text-white"
-              : "border-gray-700 text-gray-700"
+          className={`hover:cursor-pointer hover:bg-gray-200 px-4 py-2 my-2 border-2 ${
+            [1, 6].includes(step) ? selectedButton : unselectedButton
           } `}
         >
           Solution
