@@ -157,7 +157,7 @@ const Service = ({ step, setStep }) => {
             currentQuestion + 1 !== questions.length && (
               <div
                 onClick={() => proceedToNextStep()}
-                className="px-4 py-2 border-2 h-fit border-gray-700 hover:cursor-pointer hover:bg-gray-800"
+                className="px-4 py-2 border-2 h-fit border-gray-700 hover:cursor-pointer hover:bg-gray-200"
               >
                 Next
               </div>
